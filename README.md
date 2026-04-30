@@ -88,3 +88,52 @@ To reproduce experiments:
 
 ---
 
+
+
+
+
+## train dna language models usage
+
+### Basic
+
+```bash
+python scripts/run_experiment.py \
+  --train_csv path/to/train.csv \
+  --valid_csv path/to/valid.csv \
+  --test_csv path/to/test.csv \
+  --model grover
+````
+
+### Models
+
+```bash
+--model {grover | dnabert2 | nt}
+```
+
+### Optional
+
+```bash
+--aug_csv path/to/aug.csv
+--output_dir path/to/output_dir
+```
+
+### Example
+
+```bash
+python scripts/run_experiment.py \
+  --train_csv data/train.csv \
+  --valid_csv data/valid.csv \
+  --test_csv data/test.csv \
+  --model dnabert2 \
+  --aug_csv data/aug.csv \
+  --output_dir results/run1
+```
+
+### Output
+
+* test_results.txt
+* test_predictions.csv
+* test_logits.npy
+* confusion_matrix.png
+
+
